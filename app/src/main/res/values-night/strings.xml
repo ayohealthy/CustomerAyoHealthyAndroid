@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AyoHealthy</string>
     <string name="splashscreen_content_description">SplashScreen Logo</string>
     <string name="username">username</string>
     <string name="password">Password</string>
