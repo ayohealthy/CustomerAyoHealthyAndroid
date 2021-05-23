@@ -2,16 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.devatacreative.ayohealthy">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AyoHealthy">
-        <activity android:name=".activity.auth.ForgotPasswordActivity"></activity>
-        <activity android:name=".activity.auth.LoginActivity" />
-        <activity android:name=".activity.SplashScreenActivity">
+        android:theme="@style/Theme.AyoHealthy"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activity.auth.LoginPickActivity"></activity>
+        <activity android:name=".activity.auth.ForgotPasswordActivity" />
+        <activity
+            android:name=".activity.auth.LoginActivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
