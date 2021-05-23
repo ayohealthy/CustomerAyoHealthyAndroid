@@ -7,4 +7,9 @@
     <string name="logo_content_description">AyoHealthy Logo</string>
     <string name="belum_punya_akun">Belum punya akun?</string>
     <string name="ayo_daftar">Ayo Daftar!</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="server_client_id">_jYA5OVDmmrbllhI8CtbU01c</string>
+    <string name="masuk">Masuk</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
+
 </resources>
