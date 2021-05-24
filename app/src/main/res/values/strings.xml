@@ -11,5 +11,7 @@
     <string name="server_client_id">_jYA5OVDmmrbllhI8CtbU01c</string>
     <string name="masuk">Masuk</string>
     <string name="sudah_punya_akun">Sudah punya akun?</string>
+    <string name="main_login_background_content_desc">main login background</string>
+    <string name="daftar">Daftar</string>
 
 </resources>

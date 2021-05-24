@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.devatacreative.ayohealthy.activity.auth.LoginActivity
+import com.devatacreative.ayohealthy.activity.auth.LoginPickActivity
 import com.devatacreative.ayohealthy.databinding.ActivitySplashScreenBinding
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -17,7 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         Handler(mainLooper).postDelayed({
-            intent = Intent(this@SplashScreenActivity, LoginActivity::class.java)
+            intent = Intent(this@SplashScreenActivity, LoginPickActivity::class.java)
             startActivity(intent)
         }, 2500)
     }

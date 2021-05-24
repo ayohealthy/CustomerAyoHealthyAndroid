@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AyoHealthy"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.auth.LoginPickActivity"></activity>
+        <activity android:name=".activity.auth.EmailLoginActivity"></activity>
+        <activity android:name=".activity.auth.LoginPickActivity" />
         <activity android:name=".activity.auth.ForgotPasswordActivity" />
         <activity
             android:name=".activity.auth.LoginActivity"
@@ -27,6 +28,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
