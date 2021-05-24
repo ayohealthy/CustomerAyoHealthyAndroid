@@ -10,5 +10,12 @@ class EmailLoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEmailLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initComponent()
+    }
+
+    private fun initComponent(){
+        binding.loginBackBtn.setOnClickListener {
+            finish()
+        }
     }
 }

@@ -12,6 +12,7 @@ import com.devatacreative.ayohealthy.model.AuthModel
 import com.devatacreative.ayohealthy.model.LoginModel
 import com.devatacreative.ayohealthy.utils.GlobalHelper
 import com.devatacreative.ayohealthy.viewmodel.LoginViewModel
+import com.devatacreative.ayohealthy.viewmodel.ViewModelFactory
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -68,11 +69,9 @@ class LoginActivity : AppCompatActivity() {
 //                val account: GoogleSignInAccount? = task.getResult(ApiException::class.java)
                 val account = GoogleSignIn.getLastSignedInAccount(this)
                 val accModel = LoginModel(account?.displayName, account?.photoUrl.toString(), account?.email, "0000000000", "123", "gmail", "123")
-                loginViewModel.userLogin(
-                    baseContext,
-                    accModel
-                ).observe(this, {
-                    Log.d("isi Auth Model : ", it.success.toString())
+
+                loginViewModel.authenticationLogin(accModel).observe(this, {
+                    Log.e("isi AuthModel : ", it.success.toString())
                 })
                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
                 startActivity(intent)
@@ -84,10 +83,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initComponent() {
-        loginViewModel =
-            ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
-                LoginViewModel::class.java
-            )
+        val factory = ViewModelFactory.getInstance(baseContext)
+        loginViewModel = ViewModelProvider(this, factory)[LoginViewModel::class.java]
         binding.forgotPasswordTextButton.setOnClickListener {
             Toast.makeText(this, "Lupa kata sandi", Toast.LENGTH_SHORT).show()
         }

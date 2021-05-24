@@ -6,7 +6,7 @@ plugins {
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    buildToolsVersion '30.0.3'
 
     defaultConfig {
         applicationId "com.devatacreative.ayohealthy"
@@ -46,11 +46,11 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
     implementation 'com.shobhitpuri.custombuttons:google-signin:1.0.0'
     //Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     //RetrofitConverterFactory
-    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     //OKHTTP3
-    implementation 'com.squareup.okhttp3:okhttp:4.3.1'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
     //GSON
     implementation 'com.google.code.gson:gson:2.8.6'
     //KTOR - http networking client

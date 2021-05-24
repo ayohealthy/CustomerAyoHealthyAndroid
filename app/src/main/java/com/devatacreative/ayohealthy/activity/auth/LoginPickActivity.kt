@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.view.View
 import com.devatacreative.ayohealthy.activity.MainActivity
 import com.devatacreative.ayohealthy.databinding.ActivityLoginPickBinding
+import com.devatacreative.ayohealthy.model.LoginModel
 import com.devatacreative.ayohealthy.utils.GlobalHelper
 import com.devatacreative.ayohealthy.viewmodel.LoginViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
+import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.internal.SignInButtonConfig
 
 class LoginPickActivity : AppCompatActivity() {
@@ -46,11 +48,30 @@ class LoginPickActivity : AppCompatActivity() {
             .build()
         signInClient = GoogleSignIn.getClient(this, gso)
         val intent = signInClient.signInIntent
+        startActivityForResult(intent, RC_SIGN_IN)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == RC_SIGN_IN){
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                val account = GoogleSignIn.getLastSignedInAccount(this)
+                val accModel = LoginModel(account?.displayName, account?.photoUrl.toString(), account?.email, "0000000000", "123", "gmail", "123")
+
+            }catch (e: ApiException){
+
+            }
+        }
     }
 
     private fun initComponent(){
         binding.googleAuthBtn.setStyle(SignInButton.SIZE_WIDE, SignInButton.COLOR_LIGHT)
-        binding.loginToEmailBtn.setOnClickListener {
+        binding.googleAuthBtn.setOnClickListener {
+            login()
+        }
+
+        binding.pickLoginTextBtn.setOnClickListener {
             val intent = Intent(this@LoginPickActivity, EmailLoginActivity::class.java)
             startActivity(intent)
         }

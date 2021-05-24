@@ -13,5 +13,6 @@
     <string name="sudah_punya_akun">Sudah punya akun?</string>
     <string name="main_login_background_content_desc">main login background</string>
     <string name="daftar">Daftar</string>
+    <string name="nama_akun_email_hint">Nama Akun / Email</string>
 
 </resources>

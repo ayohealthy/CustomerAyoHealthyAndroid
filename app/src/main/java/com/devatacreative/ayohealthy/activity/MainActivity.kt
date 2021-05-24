@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         if (acc != null){
             binding.email.text = acc.email
             binding.name.text = acc.displayName
-            Log.d("isi auth code", acc.photoUrl.toString())
+            Log.d("isi AuthDataSource code", acc.photoUrl.toString())
         }
     }
 }
