@@ -13,10 +13,11 @@ import retrofit2.Response
 
 class NetworkingService(private val context: Context){
     private val loginDatas = MutableLiveData<AuthModel>()
-    fun login(loginData: LoginModel): LiveData<AuthModel> {
+    fun login(loginData: LoginModel): MutableLiveData<AuthModel> {
         val retrofit = RetrofitService.retrofitBuild(Login::class.java)
         var authResult: AuthModel
-        retrofit.postLogin(loginData).enqueue(object : Callback<AuthModel> {
+        val call = retrofit.postLogin(loginData)
+        call.enqueue(object : Callback<AuthModel> {
             override fun onResponse(call: Call<AuthModel>, response: Response<AuthModel>) {
                 if (response.isSuccessful) {
                     if (response.body() != null) {

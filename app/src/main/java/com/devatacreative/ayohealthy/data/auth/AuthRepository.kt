@@ -1,6 +1,7 @@
 package com.devatacreative.ayohealthy.data.auth
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.devatacreative.ayohealthy.data.RemoteDataSource
 import com.devatacreative.ayohealthy.model.AuthModel
 import com.devatacreative.ayohealthy.model.LoginModel
@@ -17,7 +18,7 @@ class AuthRepository private constructor(private  val remoteDataSource: RemoteDa
             }
     }
 
-    override fun sendLoginData(loginModel: LoginModel): LiveData<AuthModel> {
+    override fun sendLoginData(loginModel: LoginModel): MutableLiveData<AuthModel> {
         return remoteDataSource.sendLoginData(loginModel)
 
     }

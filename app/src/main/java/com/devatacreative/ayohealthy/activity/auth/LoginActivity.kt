@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.devatacreative.ayohealthy.activity.MainActivity
+import com.devatacreative.ayohealthy.activity.mainmenu.MainActivity
 import com.devatacreative.ayohealthy.databinding.ActivityLoginBinding
 import com.devatacreative.ayohealthy.model.AuthModel
 import com.devatacreative.ayohealthy.model.LoginModel
@@ -14,7 +14,6 @@ import com.devatacreative.ayohealthy.utils.GlobalHelper
 import com.devatacreative.ayohealthy.viewmodel.LoginViewModel
 import com.devatacreative.ayohealthy.viewmodel.ViewModelFactory
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton

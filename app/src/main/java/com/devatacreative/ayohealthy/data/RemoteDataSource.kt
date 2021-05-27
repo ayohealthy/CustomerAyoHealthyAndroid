@@ -1,6 +1,6 @@
 package com.devatacreative.ayohealthy.data
 
-import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.devatacreative.ayohealthy.model.AuthModel
 import com.devatacreative.ayohealthy.model.LoginModel
 import com.devatacreative.ayohealthy.utils.NetworkingService
@@ -16,5 +16,5 @@ class RemoteDataSource private constructor(private val networkHelper: Networking
             }
     }
 
-    fun sendLoginData(loginData: LoginModel): LiveData<AuthModel> = networkHelper.login(loginData)
+    fun sendLoginData(loginData: LoginModel): MutableLiveData<AuthModel> = networkHelper.login(loginData)
 }

@@ -1,4 +1,4 @@
-package com.devatacreative.ayohealthy.activity
+package com.devatacreative.ayohealthy.activity.mainmenu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,7 +28,11 @@ class MainActivity : AppCompatActivity() {
         if (acc != null){
             binding.email.text = acc.email
             binding.name.text = acc.displayName
-            Log.d("isi AuthDataSource code", acc.photoUrl.toString())
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
     }
 }

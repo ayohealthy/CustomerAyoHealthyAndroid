@@ -1,14 +1,10 @@
 package com.devatacreative.ayohealthy.viewmodel
 
-import android.content.Context
-import android.widget.Toast
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.devatacreative.ayohealthy.data.auth.AuthRepository
 import com.devatacreative.ayohealthy.model.AuthModel
 import com.devatacreative.ayohealthy.model.LoginModel
-import com.devatacreative.ayohealthy.utils.NetworkingService
 
 class LoginViewModel(private val authRepository: AuthRepository) : ViewModel() {
 
