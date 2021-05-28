@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.auth.EmailLoginActivity">
+    tools:context=".activity.auth.RegisterActivity">
 
     <RelativeLayout
-        android:id="@+id/login_top_bar_view"
+        android:id="@+id/top_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="horizontal"
@@ -15,16 +15,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/login_back_btn"
+        <ImageView
+            android:id="@+id/register_back_btn"
             android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="14dp"
             android:layout_marginTop="16dp"
-            android:background="#00000000"
+            android:scaleType="fitStart"
             android:src="@drawable/ic_baseline_chevron_left_24"
+            app:srcCompat="@drawable/ic_baseline_chevron_left_24"
             app:tint="@color/black" />
     </RelativeLayout>
 
@@ -34,82 +35,102 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
         android:orientation="vertical"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_top_bar_view">
+        app:layout_constraintTop_toBottomOf="@+id/top_bar_layout">
 
         <TextView
-            android:id="@+id/login_title"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="64dp"
             android:fontFamily="@font/quicksand_bold"
-            android:text="@string/masuk"
+            android:text="@string/register_title"
             android:textColor="@color/black"
-            android:textSize="42sp"
-            android:textStyle="bold" />
+            android:textSize="42sp" />
 
         <EditText
-            android:id="@+id/username_email_text"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/text_edit_background"
-            android:fontFamily="@font/quicksand"
-            android:hint="@string/nama_akun_email_hint"
-            android:padding="8dp" />
-
-        <EditText
-            android:id="@+id/password_text"
+            android:id="@+id/confirm_password_field"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/text_edit_background"
             android:fontFamily="@font/quicksand"
-            android:hint="@string/password"
-            android:inputType="textPassword"
+            android:hint="Konfirmasi kata sandi"
             android:padding="8dp" />
 
-        <TextView
-            android:id="@+id/forgot_password_text_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/quicksand_bold"
-            android:text="@string/forgot_password_button_text"
-            android:textColor="@color/primary_green" />
+        <EditText
+            android:id="@+id/password_field"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/text_edit_background"
+            android:fontFamily="@font/quicksand"
+            android:hint="Kata sandi"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/name_field"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp
+"
+            android:background="@drawable/text_edit_background"
+            android:fontFamily="@font/quicksand"
+            android:hint="Nama Kamu"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/email_field"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/text_edit_background"
+            android:fontFamily="@font/quicksand"
+            android:hint="Email Kamu"
+            android:padding="8dp" />
 
         <Button
-            android:id="@+id/login_btn"
+            android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/yellow_button"
             android:fontFamily="@font/quicksand_bold"
-            android:text="@string/masuk"
+            android:text="@string/daftar"
             android:textColor="@color/primary_green"
             android:textSize="18sp"
             android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/register_agreement_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="@string/agreement_notification_for_register" />
+        </LinearLayout>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/start_guideline"
+        android:id="@+id/register_start_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="24dp"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintGuide_begin="24dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/end_guideline"
-        android:layout_width="0dp"
+        android:id="@+id/register_end_guideline"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:orientation="vertical"
@@ -117,23 +138,17 @@
         app:layout_constraintGuide_end="24dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/login_button_top_guideline"
+        android:id="@+id/register_button_top_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.63492066" />
+        app:layout_constraintGuide_percent="0.63" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/login_button_bottom_guideline"
+        android:id="@+id/guideline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6984127" />
+        app:layout_constraintGuide_percent="0.69" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

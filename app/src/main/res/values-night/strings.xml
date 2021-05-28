@@ -14,5 +14,7 @@
     <string name="main_login_background_content_desc">main login background</string>
     <string name="daftar">Daftar</string>
     <string name="nama_akun_email_hint">Nama Akun / Email</string>
+    <string name="register_title">Buat Akun</string>
+    <string name="agreement_notification_for_register">Dengan menekan tombol /bDaftar diatas, kamu menyetujui</string>
 
 </resources>

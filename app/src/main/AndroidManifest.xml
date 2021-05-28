@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AyoHealthy"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activity.auth.RegisterActivity"></activity>
         <activity android:name=".activity.auth.EmailLoginActivity" />
         <activity android:name=".activity.auth.LoginPickActivity" />
         <activity android:name=".activity.auth.ForgotPasswordActivity" />

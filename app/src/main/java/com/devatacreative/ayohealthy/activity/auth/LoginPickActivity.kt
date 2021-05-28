@@ -102,5 +102,9 @@ class LoginPickActivity : AppCompatActivity() {
             val intent = Intent(this@LoginPickActivity, EmailLoginActivity::class.java)
             startActivity(intent)
         }
+        binding.pickRegisterBtn.setOnClickListener {
+            val intent = Intent(this@LoginPickActivity, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
