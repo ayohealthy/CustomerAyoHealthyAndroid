@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitService {
 
-    const val BASE_URL = "http://192.168.1.107/ayohealthy/public/api/"
+    const val BASE_URL = "http://192.168.1.104/ayohealthy/public/api/"
     private val okHttpClient = OkHttpClient.Builder().retryOnConnectionFailure(true).build()
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
