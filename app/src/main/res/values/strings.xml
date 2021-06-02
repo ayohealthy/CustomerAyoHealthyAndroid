@@ -16,5 +16,9 @@
     <string name="nama_akun_email_hint">Nama Akun / Email</string>
     <string name="register_title">Buat Akun</string>
     <string name="agreement_notification_for_register">Dengan menekan tombol /bDaftar diatas, kamu menyetujui</string>
+    <string name="tv_pulihkan_sandi">Pulihkan sandi</string>
+    <string name="forgot_description_text">Kami siap membantu kamu untuk mengembalikan kata sandi dari akun kesayangan kamu. Masukkan alamat email yang kamu gunakan dengan benar ya!</string>
+    <string name="forgot_warning_text">Alamat email tidak ditemukan / tidak terdaftar</string>
+    <string name="pulihkan_sandi">Pulihkan Sandi</string>
 
 </resources>
