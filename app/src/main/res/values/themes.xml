@@ -15,4 +15,11 @@
         <!-- Customize your theme here. -->
 
     </style>
+    <style name="BottomNavigationViewActiveTextStyle">
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+    </style>
+    <style name="BottomNavigationViewInactiveTextStyle">
+        <item name="android:fontFamily">@font/quicksand</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

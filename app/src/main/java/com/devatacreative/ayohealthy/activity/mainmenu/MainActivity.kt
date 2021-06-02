@@ -45,11 +45,15 @@ class MainActivity : AppCompatActivity() {
         val viewPager: ViewPager2 = binding.viewPager2
         viewPager.adapter = pagerAdapter
         val bottomTab = binding.bottomNavigationView
-
+        bottomTab.itemIconTintList = null
         bottomTab.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.menu_home -> {
                     item.title = "Home"
+                    item.setIcon(R.drawable.home_active)
+                }
+                R.id.menu_order -> {
+
                 }
                 else -> false
             }

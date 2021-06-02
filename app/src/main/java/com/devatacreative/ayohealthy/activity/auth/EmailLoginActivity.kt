@@ -1,5 +1,6 @@
 package com.devatacreative.ayohealthy.activity.auth
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.devatacreative.ayohealthy.databinding.ActivityEmailLoginBinding
@@ -16,6 +17,9 @@ class EmailLoginActivity : AppCompatActivity() {
     private fun initComponent(){
         binding.loginBackBtn.setOnClickListener {
             finish()
+        }
+        binding.forgotPasswordTextBtn.setOnClickListener {
+            startActivity(Intent(this@EmailLoginActivity, ForgotPasswordActivity::class.java))
         }
     }
 }
