@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ChangeAccountDataActivity">
+
+    <RelativeLayout
+        android:id="@+id/top_bar_change_acc"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/change_acc_back_btn"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="16dp"
+            android:background="#00000000"
+            android:src="@drawable/ic_baseline_chevron_left_24"
+            app:tint="@color/black" />
+    </RelativeLayout>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar_change_acc"
+        >
+
+        <TextView
+            android:id="@+id/tv_change_acc_data"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="@color/black"
+            android:textSize="42sp"
+            android:text="Ubah Data Akun" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_pict"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_change_acc_data"
+            android:src="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            app:layout_constraintStart_toEndOf="@id/profile_pict"
+            app:layout_constraintTop_toTopOf="@id/profile_pict"
+            app:layout_constraintBottom_toBottomOf="@id/profile_pict"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/nama_pengguna"/>
+
+        <TextView
+            android:id="@+id/tv_old_email_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/profile_pict"
+            app:layout_constraintTop_toBottomOf="@+id/profile_pict"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Alamat email lama"/>
+
+        <EditText
+            android:id="@+id/password_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_old_email_address"
+            android:background="@drawable/text_edit_background"
+            android:fontFamily="@font/quicksand"
+            android:padding="8dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="280dp"
+            app:layout_constraintEnd_toEndOf="@id/password_text"
+            app:layout_constraintStart_toStartOf="@id/password_text"
+            app:layout_constraintTop_toBottomOf="@+id/password_text"
+            android:background="@drawable/yellow_button"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Masuk"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/primary_green"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
