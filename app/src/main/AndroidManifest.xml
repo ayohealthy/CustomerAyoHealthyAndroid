@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.devatacreative.ayohealthy">
+    package="com.devatacreative.ayohealthy" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,8 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AyoHealthy"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".activity.ChangeAccountDataActivity"></activity>
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name=".activity.DashboardActivity"
+            android:label="@string/title_activity_dashboard" >
+        </activity>
+        <activity
+            android:name=".activity.mainmenu.HomeActivity"
+            android:label="@string/title_activity_home" >
+        </activity>
+        <activity android:name=".activity.ChangeAccountDataActivity" />
         <activity android:name=".activity.auth.RegisterActivity" />
         <activity android:name=".activity.auth.EmailLoginActivity" />
         <activity android:name=".activity.auth.LoginPickActivity" />
@@ -22,7 +30,7 @@
             android:noHistory="true" />
         <activity
             android:name=".activity.SplashScreenActivity"
-            android:noHistory="true">
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

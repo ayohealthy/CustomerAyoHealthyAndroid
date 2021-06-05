@@ -4,17 +4,17 @@
     <item
         android:id="@+id/menu_home"
         android:icon="@drawable/bottom_bar_home_state"
-        android:title="Home"
+        android:title="Beranda"
 
         />
     <item
         android:id="@+id/menu_order"
         android:icon="@drawable/bottom_bar_order_state"
-        android:title="Order"
+        android:title="Pesanan"
         />
     <item
         android:id="@+id/menu_profile"
         android:icon="@drawable/bottom_bar_profile_state"
-        android:title="Profile"
+        android:title="Profil"
         />
 </menu>

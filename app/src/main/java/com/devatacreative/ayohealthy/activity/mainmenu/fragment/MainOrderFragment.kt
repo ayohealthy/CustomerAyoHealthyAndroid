@@ -6,28 +6,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.devatacreative.ayohealthy.R
-import com.devatacreative.ayohealthy.databinding.FragmentAccountBinding
 
 /**
  * A simple [Fragment] subclass.
- * Use the [AccountFragment.newInstance] factory method to
+ * Use the [MainOrderFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class AccountFragment : Fragment() {
-
-    private lateinit var binding: FragmentAccountBinding
+class MainOrderFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentAccountBinding.inflate(layoutInflater)
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentAccountBinding.inflate(layoutInflater, container, false)
-        return binding.root
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_main_order, container, false)
     }
 
 }

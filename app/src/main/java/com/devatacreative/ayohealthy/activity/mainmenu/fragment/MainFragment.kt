@@ -6,28 +6,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import com.devatacreative.ayohealthy.R
 import com.devatacreative.ayohealthy.activity.adapter.HomeMenuAdapter
-import com.devatacreative.ayohealthy.databinding.FragmentHomeBinding
+import com.devatacreative.ayohealthy.databinding.FragmentMainBinding
 
 /**
  * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
+ * Use the [MainFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : Fragment() {
-    private lateinit var binding: FragmentHomeBinding
+class MainFragment : Fragment() {
+    private lateinit var binding: FragmentMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentHomeBinding.inflate(layoutInflater)
+        binding = FragmentMainBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+        binding = FragmentMainBinding.inflate(layoutInflater, container, false)
         setRecyclerView()
         return binding.root
     }
