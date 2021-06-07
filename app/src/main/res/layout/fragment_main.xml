@@ -70,7 +70,7 @@
                     android:layout_height="64dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:src="@color/purple_200" />
+                    android:src="@drawable/blank_profile" />
             </RelativeLayout>
 
             <TextView
