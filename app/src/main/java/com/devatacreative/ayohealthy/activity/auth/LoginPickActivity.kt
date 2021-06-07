@@ -13,7 +13,9 @@ import com.devatacreative.ayohealthy.activity.mainmenu.MainActivity
 import com.devatacreative.ayohealthy.databinding.ActivityLoginPickBinding
 import com.devatacreative.ayohealthy.model.AuthModel
 import com.devatacreative.ayohealthy.model.LoginModel
+import com.devatacreative.ayohealthy.model.UserPrefModel
 import com.devatacreative.ayohealthy.utils.GlobalHelper
+import com.devatacreative.ayohealthy.utils.UserPref
 import com.devatacreative.ayohealthy.viewmodel.LoginViewModel
 import com.devatacreative.ayohealthy.viewmodel.ViewModelFactory
 import com.google.android.gms.auth.api.signin.*
@@ -55,6 +57,7 @@ class LoginPickActivity : AppCompatActivity() {
             .build()
         signInClient = GoogleSignIn.getClient(this, gso)
         val intent = signInClient.signInIntent
+
         startActivityForResult(intent, RC_SIGN_IN)
     }
 
@@ -74,17 +77,26 @@ class LoginPickActivity : AppCompatActivity() {
                     "gmail",
                     "123"
                 )
-                loginViewModel.authenticationLogin(accModel).observe(this, {
-                    Log.e("isi AuthModel : ", it.success.toString())
-                    authResult = it
-                    if (authResult != null) {
+                val userModel = UserPrefModel(
+                    account?.id,
+                    account?.idToken,
+                    account?.displayName,
+                    account?.email,
+                    account?.photoUrl.toString()
+                )
+                UserPref(this).setUser(userModel)
+//                loginViewModel.authenticationLogin(accModel).observe(this, {
+//                    Log.e("isi AuthModel : ", it.success.toString())
+//                    authResult = it
+//                    if (authResult != null) {
                         startActivity(Intent(this@LoginPickActivity, MainActivity::class.java))
-                        loginViewModel.authenticationLogin(accModel).removeObservers(this)
+//                        loginViewModel.authenticationLogin(accModel).removeObservers(this)
                         binding.loadingLayer.visibility = View.INVISIBLE
                         binding.loading.visibility = View.INVISIBLE
                         finish()
-                    }
-                })
+//                    }
+//                })
+
 
             } catch (e: ApiException) {
                 Log.e("KESALAHAN ", "SignInResult Failed Code : " + e.statusCode.toString())

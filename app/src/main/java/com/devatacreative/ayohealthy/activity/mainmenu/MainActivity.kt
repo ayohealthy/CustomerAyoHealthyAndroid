@@ -10,6 +10,8 @@ import com.devatacreative.ayohealthy.activity.mainmenu.fragment.AccountFragment
 import com.devatacreative.ayohealthy.activity.mainmenu.fragment.MainFragment
 import com.devatacreative.ayohealthy.activity.mainmenu.fragment.MainOrderFragment
 import com.devatacreative.ayohealthy.databinding.ActivityMainBinding
+import com.devatacreative.ayohealthy.model.UserPrefModel
+import com.devatacreative.ayohealthy.utils.UserPref
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -18,6 +20,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var signInClient: GoogleSignInClient
+    private lateinit var userProfile: UserPrefModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -34,26 +37,23 @@ class MainActivity : AppCompatActivity() {
         signInClient = GoogleSignIn.getClient(this, gso)
         val acc = GoogleSignIn.getLastSignedInAccount(this)
         if (acc != null){
+
 //            binding.email.text = acc.email
 //            binding.name.text = acc.displayName
         }
+        userProfile = UserPref(this).getUser()
+
     }
 
     private fun initBottomLayout(){
-//        val pagerAdapter = SectionPagerAdapter(this)
-//        viewPager.adapter = pagerAdapter
-
         val bottomTab = binding.bottomNavigationView
         bottomTab.itemIconTintList = null
-        getFragmentPage(MainFragment())
-//        val navController = findNavController(R.id.nav_fragment)
-//        bottomTab.setupWithNavController(navController)
-
+        getFragmentPage(MainFragment(userProfile))
         bottomTab.setOnNavigationItemSelectedListener { item ->
             val fragment: Fragment?
             when (item.itemId) {
                 R.id.menu_home -> {
-                    fragment = MainFragment()
+                    fragment = MainFragment(userProfile)
                     getFragmentPage(fragment)
 
                     return@setOnNavigationItemSelectedListener true
@@ -70,11 +70,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-//        val navView: BottomNavigationView = binding.bottomNavigationView
-//
-//        val navController = findNavController(R.id.viewPager2)
-//
-//        navView.setupWithNavController(navController)
     }
 
     private fun getFragmentPage(fragment: Fragment?) {

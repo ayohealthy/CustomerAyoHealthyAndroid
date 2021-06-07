@@ -8,13 +8,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.devatacreative.ayohealthy.activity.adapter.HomeMenuAdapter
 import com.devatacreative.ayohealthy.databinding.FragmentMainBinding
+import com.devatacreative.ayohealthy.model.UserPrefModel
 
 /**
  * A simple [Fragment] subclass.
  * Use the [MainFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MainFragment : Fragment() {
+class MainFragment(private val userProfile: UserPrefModel) : Fragment() {
     private lateinit var binding: FragmentMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +29,12 @@ class MainFragment : Fragment() {
     ): View {
         binding = FragmentMainBinding.inflate(layoutInflater, container, false)
         setRecyclerView()
+        setViewData()
         return binding.root
+    }
+
+    private fun setViewData(){
+        binding.userDisplayName.text = userProfile.name
     }
 
     private fun setRecyclerView(){
