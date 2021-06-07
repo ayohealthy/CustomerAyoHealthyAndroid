@@ -12,5 +12,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
+
+
     
 }

@@ -24,6 +24,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nama_pengguna">Nama pengguna</string>
+    <string name="pulihkan_sandi_text">Konfirmasi pulihkan sandi telah berhasil kami kirimkan ke alamat email kamu. Mohon ikuti instuksi yang ada pada email.</string>
 
 
 </resources>
