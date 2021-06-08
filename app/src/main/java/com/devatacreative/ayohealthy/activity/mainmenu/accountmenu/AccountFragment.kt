@@ -10,6 +10,9 @@ import com.bumptech.glide.Glide
 import com.devatacreative.ayohealthy.R
 import com.devatacreative.ayohealthy.databinding.FragmentAccountBinding
 import com.devatacreative.ayohealthy.model.UserPrefModel
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 
 /**
  * A simple [Fragment] subclass.
@@ -19,6 +22,7 @@ import com.devatacreative.ayohealthy.model.UserPrefModel
 class AccountFragment(private val userProfile: UserPrefModel) : Fragment() {
 
     private lateinit var binding: FragmentAccountBinding
+    private lateinit var signInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,15 +38,25 @@ class AccountFragment(private val userProfile: UserPrefModel) : Fragment() {
         binding = FragmentAccountBinding.inflate(layoutInflater, container, false)
         setProfileData()
         setRecyclerView()
+        setSignOut()
         return binding.root
     }
 
     private fun setRecyclerView(){
         val recyclerView = binding.recyclerView
-        val adapter = AccountMenuAdapter()
+        val adapter = AccountMenuAdapter(this.requireContext())
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this.context)
         recyclerView.adapter = adapter
+    }
+
+    private fun setSignOut(){
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .requestProfile()
+            .build()
+
+
     }
 
     private fun setProfileData(){

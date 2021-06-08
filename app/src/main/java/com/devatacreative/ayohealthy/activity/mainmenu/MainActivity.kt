@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             .build()
         signInClient = GoogleSignIn.getClient(this, gso)
         val acc = GoogleSignIn.getLastSignedInAccount(this)
+
         if (acc != null){
 
 //            binding.email.text = acc.email
