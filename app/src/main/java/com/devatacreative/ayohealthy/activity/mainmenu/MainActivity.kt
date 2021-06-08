@@ -3,10 +3,8 @@ package com.devatacreative.ayohealthy.activity.mainmenu
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.devatacreative.ayohealthy.R
-import com.devatacreative.ayohealthy.activity.mainmenu.fragment.AccountFragment
+import com.devatacreative.ayohealthy.activity.mainmenu.accountmenu.AccountFragment
 import com.devatacreative.ayohealthy.activity.mainmenu.fragment.MainFragment
 import com.devatacreative.ayohealthy.activity.mainmenu.fragment.MainOrderFragment
 import com.devatacreative.ayohealthy.databinding.ActivityMainBinding
@@ -63,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.menu_profile -> {
-                    fragment = AccountFragment()
+                    fragment = AccountFragment(userProfile)
                     getFragmentPage(fragment)
                     return@setOnNavigationItemSelectedListener true
                 }
