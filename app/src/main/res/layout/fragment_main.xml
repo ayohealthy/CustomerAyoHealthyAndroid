@@ -79,14 +79,36 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="Pilihan menu rekomendasi"
+                android:text="@string/pilihan_menu_rekomendasi"
                 android:textColor="@color/primary_green"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
                 app:layout_constraintStart_toStartOf="@+id/relativeLayout"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
+            <RelativeLayout
+                android:id="@+id/loading_layer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout7"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout7"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout7">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_centerInParent="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="loading_anim.json"
+                    app:lottie_loop="true"
+                    />
+
+            </RelativeLayout>
+
             <LinearLayout
+                android:id="@+id/linearLayout7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="16dp"

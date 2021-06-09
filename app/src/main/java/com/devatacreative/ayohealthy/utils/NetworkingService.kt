@@ -6,10 +6,8 @@ import android.os.Looper
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
-import com.devatacreative.ayohealthy.APIInterfaces.FoodRecommendation
 import com.devatacreative.ayohealthy.APIInterfaces.Login
 import com.devatacreative.ayohealthy.model.AuthModel
-import com.devatacreative.ayohealthy.model.FNBRecommendationFromOtherUsers
 import com.devatacreative.ayohealthy.model.LoginModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,7 +15,6 @@ import retrofit2.Response
 
 class NetworkingService(private val context: Context) {
     private val loginDatas = MutableLiveData<AuthModel>()
-    private val menuFromUsers = MutableLiveData<FNBRecommendationFromOtherUsers?>()
     fun login(loginData: LoginModel): MutableLiveData<AuthModel> {
         val retrofit = RetrofitService.retrofitBuild(Login::class.java)
         var authResult: AuthModel

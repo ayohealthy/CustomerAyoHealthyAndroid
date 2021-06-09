@@ -25,5 +25,6 @@
     <string name="menu_example">Salad Buah Enak</string>
     <string name="merchant_name">nama merchant</string>
     <string name="rekomendasi_untuk_kamu">Rekomendasi untuk kamu</string>
+    <string name="pilihan_menu_rekomendasi">Pilihan menu rekomendasi</string>
 
 </resources>

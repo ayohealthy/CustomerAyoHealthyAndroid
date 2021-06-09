@@ -1,22 +1,21 @@
 package com.devatacreative.ayohealthy.activity.mainmenu.fragment
 
-import android.content.res.Resources
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.DrawableRes
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.devatacreative.ayohealthy.R
 import com.devatacreative.ayohealthy.activity.adapter.HomeMenuAdapter
 import com.devatacreative.ayohealthy.databinding.FragmentMainBinding
+import com.devatacreative.ayohealthy.model.RecommendedFnbItem
 import com.devatacreative.ayohealthy.model.UserPrefModel
+import com.devatacreative.ayohealthy.viewmodel.MenuViewModel
+import com.devatacreative.ayohealthy.viewmodel.ViewModelFactory
 
 /**
  * A simple [Fragment] subclass.
@@ -25,6 +24,7 @@ import com.devatacreative.ayohealthy.model.UserPrefModel
  */
 class MainFragment(private val userProfile: UserPrefModel) : Fragment() {
     private lateinit var binding: FragmentMainBinding
+    private lateinit var viewModel: MenuViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,9 +36,15 @@ class MainFragment(private val userProfile: UserPrefModel) : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentMainBinding.inflate(layoutInflater, container, false)
-        setRecyclerView()
         setViewData()
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val factory = ViewModelFactory.getInstance(requireContext())
+        viewModel = ViewModelProvider(this, factory)[MenuViewModel::class.java]
+        setRecyclerView()
     }
 
     private fun setViewData(){
@@ -52,6 +58,8 @@ class MainFragment(private val userProfile: UserPrefModel) : Fragment() {
                     .into(binding.homeProfileImage)
             }
         }
+        binding.productRecyclerView.visibility = View.INVISIBLE
+        binding.loadingLayer.visibility = View.VISIBLE
     }
 
     private fun setRecyclerView(){
@@ -60,5 +68,13 @@ class MainFragment(private val userProfile: UserPrefModel) : Fragment() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = GridLayoutManager(this.context, 2, GridLayoutManager.VERTICAL, false)
         recyclerView.adapter = adapter
+        viewModel.loadUserRecommendationItems().observe(viewLifecycleOwner, { recommendation ->
+            val recommendedItem = recommendation.recommendedFnb
+            adapter.setData(recommendedItem as List<RecommendedFnbItem>)
+            adapter.notifyDataSetChanged()
+            binding.productRecyclerView.visibility = View.VISIBLE
+            binding.loadingLayer.visibility = View.INVISIBLE
+        })
+
     }
 }

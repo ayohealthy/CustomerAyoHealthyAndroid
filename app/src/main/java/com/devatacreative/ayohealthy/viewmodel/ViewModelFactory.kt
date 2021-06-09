@@ -25,8 +25,8 @@ class ViewModelFactory private constructor(private val authRepository: AuthRepos
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
                 LoginViewModel(authRepository) as T
             }
-            modelClass.isAssignableFrom(RelatedMenuViewModel::class.java) -> {
-                RelatedMenuViewModel(menuRepository) as T
+            modelClass.isAssignableFrom(MenuViewModel::class.java) -> {
+                MenuViewModel(menuRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel Class : " + modelClass.name)
         }
