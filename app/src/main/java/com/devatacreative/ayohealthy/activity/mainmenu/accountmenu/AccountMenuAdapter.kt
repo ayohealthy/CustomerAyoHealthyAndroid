@@ -59,6 +59,5 @@ class AccountMenuAdapter(private val context: Context): RecyclerView.Adapter<Acc
         }
     }
 
-
     override fun getItemCount(): Int = this.menu.size
 }

@@ -1,6 +1,7 @@
 package com.devatacreative.ayohealthy.activity.mainmenu
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.devatacreative.ayohealthy.R
@@ -13,8 +14,6 @@ import com.devatacreative.ayohealthy.utils.UserPref
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var signInClient: GoogleSignInClient
@@ -54,7 +53,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_home -> {
                     fragment = MainFragment(userProfile)
                     getFragmentPage(fragment)
-
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.menu_order -> {

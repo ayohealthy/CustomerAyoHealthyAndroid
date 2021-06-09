@@ -21,5 +21,9 @@
     <string name="forgot_description_text">Kami siap membantu kamu untuk mengembalikan kata sandi dari akun kesayangan kamu. Masukkan alamat email yang kamu gunakan dengan benar ya!</string>
     <string name="forgot_warning_text">Alamat email tidak ditemukan / tidak terdaftar</string>
     <string name="pulihkan_sandi">Pulihkan Sandi</string>
+    <string name="pesanan">Pesanan</string>
+    <string name="menu_example">Salad Buah Enak</string>
+    <string name="merchant_name">nama merchant</string>
+    <string name="rekomendasi_untuk_kamu">Rekomendasi untuk kamu</string>
 
 </resources>

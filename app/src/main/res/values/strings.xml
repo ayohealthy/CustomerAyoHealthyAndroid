@@ -25,7 +25,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nama_pengguna">Nama pengguna</string>
     <string name="pulihkan_sandi_text">Konfirmasi pulihkan sandi telah berhasil kami kirimkan ke alamat email kamu. Mohon ikuti instuksi yang ada pada email.</string>
-
+    <string name="pesanan">Pesanan</string>
+    <string name="menu_example">Salad Buah Enak</string>
+    <string name="merchant_name">nama merchant</string>
+    <string name="rekomendasi_untuk_kamu">Rekomendasi untuk kamu</string>
 
 
 </resources>
